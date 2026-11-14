@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Celer 隐私政策：本机文件索引、可选 MCP 与文件共享、数据保留和删除方式，以及联系信息。">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>Celer 隐私政策</title>
+  <link rel="canonical" href="https://jcmike1.github.io/celer/privacy-zh.html">
+  <link rel="alternate" hreflang="en" href="https://jcmike1.github.io/celer/privacy.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://jcmike1.github.io/celer/privacy-zh.html">
+  <link rel="alternate" hreflang="x-default" href="https://jcmike1.github.io/celer/privacy.html">
+  <link rel="icon" type="image/png" href="./celer.png">
+  <link rel="stylesheet" href="./privacy.css">
+</head>
+<body>
+  <header>
+    <div class="wrap masthead">
+      <a class="brand" href="./privacy-zh.html" aria-label="Celer 首页"><img src="./celer.png" width="48" height="48" alt="">Celer</a>
+      <nav aria-label="页面导航">
+        <a href="mailto:jc.mike@outlook.com">联系</a>
+        <a href="https://github.com/jcmike1/celer/issues" rel="noopener noreferrer">提交问题</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="zh" aria-labelledby="zh-title">
+      <h1 id="zh-title">隐私政策</h1>
+      <p class="date">生效日期：2026 年 11 月 14 日；最后更新：2026 年 11 月 15 日</p>
+      <div class="summary">
+        <p>Celer 是由 <a href="https://github.com/jcmike1" rel="noopener noreferrer">jcmike1</a> 维护的 macOS 文件名搜索与管理应用。核心索引和搜索在你的 Mac 上运行。Celer 不包含广告、跟踪、开发者运营的统计分析，也不会自动上传你的索引。</p>
+        <p>可选共享功能有所不同：开启 MCP 后，连接的工具可以取得文件元数据；开启文件服务后，客户端可以访问你共享的文件内容。具体说明如下。</p>
+      </div>
+
+      <h2>1. 在本机处理的信息</h2>
+      <p>Celer 在本机保存文件名、路径、目录关系、文件标识、类型、大小、日期等文件系统元数据索引。为维护索引和提供功能，还可能保存你选择的索引位置、排除规则、筛选条件、已存与最近搜索、最近打开的项目、最近文件变化、文件事件位置及相关设置。</p>
+      <p>索引功能不会对文件正文建立全文索引。但你主动选择的打开、预览、拷贝、共享、上传或下载等操作，可能读取或写入文件内容，或交由 macOS 与其他应用处理。</p>
+      <p>核心搜索不要求注册 Celer 账户，也不依赖开发者运营的云服务。维护者不会自动收到你的本机索引、搜索记录或文件。</p>
+
+      <h2>2. 权限与选定位置</h2>
+      <p>你可以在设置中选择和移除索引位置。沙盒版通过 macOS 安全作用域书签恢复所选文件夹的访问权限。完全磁盘访问是可选的，不会扩大设置中的索引范围。系统权限、应用版本及文件系统会影响实际可访问的项目。</p>
+      <p>你可以从活动索引中移除位置、修改排除规则、停止索引，或在 macOS 中撤销权限。移除索引位置不会删除原文件；已存搜索和其他历史记录可能需要另行清理。</p>
+
+      <h2>3. 可选的 AI 工具访问（MCP）</h2>
+      <p>MCP 默认关闭。开启后，Celer 在本机提供需要认证的接口，让连接的工具搜索文件元数据、读取索引状态，并在 Finder 中显示允许访问的结果。该接口不提供读取文件正文或修改文件的操作。</p>
+      <p>结果可能包含文件名、路径、类型、大小和日期。你连接的工具可能将结果发送给其 AI 提供方或其他服务，数据因而可能离开本机，并按该服务的政策保留。Celer 不替你选择这些服务。请只连接可信工具、保护访问令牌，并按需设置 MCP 排除位置。关闭 MCP 或退出 Celer 会停止此接口。</p>
+
+      <h2>4. 可选的文件共享</h2>
+      <p>文件服务默认关闭、仅限本机且只读。开启后，通过认证的客户端可访问你配置的共享文件夹。允许写入后，远端客户端还可上传、重命名、移动或永久删除共享文件。服务会为提供功能与安全防护而处理请求头、认证信息、连接地址及文件数据。</p>
+      <p>支持 HTTPS 的版本要求局域网共享使用 HTTPS。客户端必须信任所配置的证书并验证主机名。本机回环地址仍可使用 HTTP。HTTPS 保护传输中的数据，但不代表 Celer 加密了所有本机文件或索引。请勿将该服务暴露到公网。</p>
+      <p>本机配置保存加盐后的密码校验值。支持并配置密码查看功能时，密码保存在 macOS 钥匙串中。HTTPS 私钥也存放在钥匙串；配置只保存公开证书和主机名，不保存证书导入密码。退出 Celer 会停止文件服务。</p>
+
+      <h2>5. 其他服务与披露</h2>
+      <p>Celer 不出售个人信息，也不将其用于定向广告。你主动打开或共享的文件，可能由 macOS、云存储服务、接收应用或你选择的接收者处理；你发送给它们的信息适用各自的隐私政策。</p>
+      <p>本政策网站由 GitHub Pages 托管。页面不加载统计或广告脚本，不设置应用 Cookie，也不使用浏览器本地存储。GitHub 可能为提供托管服务而处理 IP 地址等访问信息，详见 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer">GitHub 隐私声明</a>。</p>
+
+      <h2>6. 保留与删除</h2>
+      <p>本机索引和设置会保留在你的 Mac 上，直到你清理或移除。部分活动记录有数量限制，或只保留于当前会话。重建索引不一定会清除已保存设置、最近搜索或打开记录。</p>
+      <p>若需完全重置本机数据，请先退出 Celer，再移除应用数据。默认非沙盒版数据目录为 <code>~/Library/Application Support/Celer/</code>；沙盒版位于 <code>~/Library/Containers/dev.finso.Celer/</code> 容器内。偏好设置和钥匙串项目可能需要另行移除。仅卸载应用不一定会删除这些内容。系统备份可能按你的备份设置保留副本；普通删除不等于安全擦除。</p>
+      <p>维护者无法远程查看或删除只保存在你 Mac 上的数据。你主动在支持请求中提交的信息，可能为了回复和处理该请求而保留；GitHub 托管的信息也受其保留规则约束。</p>
+
+      <h2>7. 安全与你的选择</h2>
+      <p>Celer 按功能使用 macOS 访问控制、受保护的本机配置文件、认证及钥匙串。没有存储或传输方式能保证绝对安全。请保护你的 Mac、备份、共享目录、认证信息及客户端信任设置。你可以关闭可选服务，而不必关闭核心本机搜索功能。</p>
+
+      <h2>8. 联系与隐私请求</h2>
+      <p>有关本政策的问题、支持需求，或你主动提交信息的相关请求，请发送邮件至 <a href="mailto:jc.mike@outlook.com">jc.mike@outlook.com</a> 联系维护者。在适用法律规定的范围内，你可以请求访问、更正或删除这些信息。</p>
+      <p>如需提交问题或报告错误，也可以使用 <a href="https://github.com/jcmike1/celer/issues" rel="noopener noreferrer">Celer GitHub Issues</a>。Issues 内容公开，提交通常需要 GitHub 账户。请勿发布密码、访问令牌、私钥、索引数据库，或包含隐私的文件名与路径。涉及私密信息的事项请使用上述邮箱，并仅提供处理请求所需的信息。</p>
+
+      <h2>9. 政策变更</h2>
+      <p>本政策更新后，会在此页面发布并修改日期。数据处理方式发生重大变化且法律要求时，会另行提供通知或征求同意。</p>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">Celer · 隐私政策 · <a href="mailto:jc.mike@outlook.com">jc.mike@outlook.com</a> · <a href="https://github.com/jcmike1/celer/issues" rel="noopener noreferrer">提交问题</a></div>
+  </footer>
+</body>
+</html>

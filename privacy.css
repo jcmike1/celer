@@ -1,0 +1,51 @@
+:root {
+  --paper: #ffffff;
+  --ink: #182121;
+  --muted: #566261;
+  --line: #dce5df;
+  --link: #176044;
+  --wash: #f5f8f6;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 17px/1.75 Georgia, "Songti SC", serif;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+a { color: var(--link); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.wrap { max-width: 860px; padding: 0 28px; margin: 0 auto; }
+header { background: var(--wash); border-bottom: 1px solid var(--line); }
+.masthead { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 24px; padding-bottom: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-size: 28px; font-weight: 700; }
+.brand img { display: block; width: 48px; height: 48px; flex: 0 0 48px; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; }
+main { padding-top: 38px; padding-bottom: 40px; }
+h1 { margin: 0 0 6px; font-size: 32px; line-height: 1.3; }
+h2 { margin: 30px 0 10px; font-size: 21px; line-height: 1.45; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 8px 0; }
+.date, footer { color: var(--muted); font-size: 15px; }
+.summary { border-left: 3px solid #ba8c27; padding-left: 18px; margin: 26px 0; }
+code { font: 14px/1.7 "SFMono-Regular", Consolas, monospace; overflow-wrap: anywhere; }
+footer { border-top: 1px solid var(--line); padding: 24px 0 34px; }
+html[lang="zh-Hans"] body { line-height: 1.9; }
+@media (max-width: 540px) {
+  .wrap { padding-left: 20px; padding-right: 20px; }
+  .masthead { align-items: flex-start; }
+  main { padding-top: 28px; }
+  h1 { font-size: 28px; }
+}
+@media print {
+  body { font-size: 11pt; }
+  header, footer { background: none; }
+  nav { display: none; }
+  a { color: inherit; }
+  .wrap { max-width: none; }
+}

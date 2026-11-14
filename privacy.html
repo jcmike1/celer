@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Celer privacy policy: local file indexing, optional MCP and file sharing, data retention, and contact information.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>Celer Privacy Policy</title>
+  <link rel="canonical" href="https://jcmike1.github.io/celer/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://jcmike1.github.io/celer/privacy.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://jcmike1.github.io/celer/privacy-zh.html">
+  <link rel="alternate" hreflang="x-default" href="https://jcmike1.github.io/celer/privacy.html">
+  <link rel="icon" type="image/png" href="./celer.png">
+  <link rel="stylesheet" href="./privacy.css">
+</head>
+<body>
+  <header>
+    <div class="wrap masthead">
+      <a class="brand" href="./" aria-label="Celer home"><img src="./celer.png" width="48" height="48" alt="">Celer</a>
+      <nav aria-label="Page navigation">
+        <a href="mailto:jc.mike@outlook.com">Contact</a>
+        <a href="https://github.com/jcmike1/celer/issues" rel="noopener noreferrer">Report an issue</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="english" lang="en" aria-labelledby="english-title">
+      <h1 id="english-title">Privacy Policy</h1>
+      <p class="date">Effective: November 14, 2026 · Last updated: November 15, 2026</p>
+      <div class="summary">
+        <p>Celer is a macOS file-name search and management app maintained by <a href="https://github.com/jcmike1" rel="noopener noreferrer">jcmike1</a>. Its core index and searches run on your Mac. Celer does not include advertising, tracking, developer-operated analytics, or automatic uploads of your index.</p>
+        <p>Optional sharing is different: enabling MCP can disclose file metadata to tools you connect, and enabling the file server can share selected file contents. Those choices are described below.</p>
+      </div>
+
+      <h2>1. Information processed on your Mac</h2>
+      <p>Celer stores a local index of file names, paths, directory relationships, file identifiers, types, sizes, dates, and other file-system metadata. It may also store your chosen index locations, exclusions, filters, saved and recent searches, recently opened items, recent file changes, file-event positions, and settings needed to maintain the index.</p>
+      <p>Indexing does not build a full-text index of file contents. Actions you explicitly choose, such as opening, previewing, copying, sharing, uploading, or downloading a file, may read or write its contents or ask macOS or another app to do so.</p>
+      <p>Celer's core search does not require a Celer account or a developer-operated cloud service. The maintainer does not receive your local index, searches, or files automatically.</p>
+
+      <h2>2. Permissions and selected locations</h2>
+      <p>You can choose and remove index locations in settings. The sandboxed build uses macOS security-scoped bookmarks to restore access to selected folders. Full Disk Access is optional and does not expand the configured index scope. macOS permissions, the app edition, and the file system can affect which items are accessible.</p>
+      <p>You can remove a location from the active index, change exclusions, stop indexing, or revoke macOS permissions. Removing an index location does not delete the original files. Saved searches and other history may need to be cleared separately.</p>
+
+      <h2>3. Optional AI-tool access through MCP</h2>
+      <p>MCP is off by default. If you enable it, Celer provides an authenticated, local-only endpoint that connected tools can use to search file metadata, read index status, and reveal permitted results in Finder. This endpoint does not expose file-content reading or file-modification operations.</p>
+      <p>Results can contain file names, paths, types, sizes, and dates. A tool you connect may send those results to its AI provider or another service, where they may leave your Mac and be retained under that provider's policy. Celer does not choose that provider for you. Connect only trusted tools, keep the access token private, and use the exclusions available in the MCP settings. Disabling MCP or quitting Celer stops this endpoint.</p>
+
+      <h2>4. Optional file sharing</h2>
+      <p>The file server is off, local-only, and read-only by default. When you enable it, authenticated clients can access the folders you configure. If you allow writes, remote clients can upload, rename, move, or permanently delete shared files. The server processes request headers, credentials, connection addresses, and file data as needed to provide and protect this service.</p>
+      <p>LAN sharing requires HTTPS in versions with this feature. Clients must trust the configured certificate and verify its hostname. Local-only HTTP remains available on loopback. HTTPS protects data in transit; it is not a promise that every local file or index is encrypted by Celer. Do not expose the service to the public internet.</p>
+      <p>Local settings contain a salted password-verification value. If password viewing is supported and configured, the password is stored in macOS Keychain. HTTPS private keys are also kept in Keychain; settings store public certificates and the hostname, not the certificate-import password. Quitting Celer stops the file server.</p>
+
+      <h2>5. Other services and disclosures</h2>
+      <p>Celer does not sell personal information or use it for targeted advertising. Files you explicitly open or share may be handled by macOS, cloud-storage providers, receiving apps, or recipients you select. Their own privacy practices apply to information you send to them.</p>
+      <p>This policy website is hosted by GitHub Pages. These pages do not load analytics or advertising scripts, set application cookies, or use browser local storage. GitHub may process IP addresses and other access information to operate its hosting service under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer">GitHub Privacy Statement</a>.</p>
+
+      <h2>6. Retention and deletion</h2>
+      <p>Local index data and settings remain on your Mac until you clear or remove them. Some activity history is bounded or session-only. Rebuilding an index does not necessarily erase saved settings, recent searches, or opened-item history.</p>
+      <p>For a complete local reset, quit Celer and remove its application data. The default non-sandboxed data folder is <code>~/Library/Application Support/Celer/</code>; the sandboxed edition stores data inside <code>~/Library/Containers/dev.finso.Celer/</code>. Preferences and Keychain entries may need to be removed separately. Uninstalling the app alone may leave these items behind. Your backups can retain copies according to your backup settings; ordinary deletion is not secure erasure.</p>
+      <p>The maintainer cannot remotely inspect or delete data stored only on your Mac. If you voluntarily submit information in a support request, it may be retained to respond to and resolve that request. GitHub also controls retention of information hosted on its services.</p>
+
+      <h2>7. Security and your choices</h2>
+      <p>Celer uses macOS access controls, protected local configuration files, authentication, and Keychain where applicable. No storage or transmission method is absolutely secure. Protect your Mac, backups, shared folders, credentials, and trusted-client configuration. You may disable optional services without disabling the core local-search functionality.</p>
+
+      <h2>8. Contact and privacy requests</h2>
+      <p>Email the maintainer at <a href="mailto:jc.mike@outlook.com">jc.mike@outlook.com</a> for policy questions, support, or requests concerning information you voluntarily shared. Subject to applicable law, you may request access, correction, or deletion of that information.</p>
+      <p>To submit a problem or report a bug, you can also use <a href="https://github.com/jcmike1/celer/issues" rel="noopener noreferrer">Celer GitHub Issues</a>. Issues are public and submitting one generally requires a GitHub account. Do not post passwords, access tokens, private keys, index databases, or private file names and paths. Use the email address above for private matters and provide only the information needed to handle your request.</p>
+
+      <h2>9. Changes</h2>
+      <p>Updates to this policy will be published on this page with a revised date. Additional notice or consent will be provided where required for a material change in data handling.</p>
+    </section>
+
+  </main>
+  <footer>
+    <div class="wrap">Celer · Privacy Policy · <a href="mailto:jc.mike@outlook.com">jc.mike@outlook.com</a> · <a href="https://github.com/jcmike1/celer/issues" rel="noopener noreferrer">Report an issue</a></div>
+  </footer>
+</body>
+</html>
